@@ -19,7 +19,6 @@ phases:
       - >
         docker run --rm 
         -e NEOLOAD_PROJECT_URL=https://github.com/ohanoun/codepipeline-test/blob/master/neoload-project/Archive/smokeTest.zip?raw=true
-        -e NEOLOAD_PROJECT_URL=https://github.com/ohanoun/codepipeline-test/blob/master/Archive/smokeTest.zip
         -e NEOLOADWEB_API_URL=http://dockerps4.neotys.com:8080
         -e SCENARIO_NAME=smoke-test-failed 
         -e NEOLOADWEB_TOKEN=0khM5QANVu0rn0BNwRQInGtJ 
