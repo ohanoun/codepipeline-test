@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo Some intialization steps
+      - echo ...
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Application...  
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Load test the application
+      - >
+        docker run --rm 
+        -e NEOLOAD_PROJECT_URL=https://github.com/neotysbde/codepipeline-test/blob/master/neoload-project/Archive/smokeTest.zip?raw=true
+        -e SCENARIO_NAME=smoke-test-failed 
+        -e NEOLOADWEB_TOKEN=d509947c287bb0efe472cf9d4a3461ce0af015636c306e7f 
+        -e TEST_NAME=CI-smoke 
+        -e CONTROLLER_ZONE_ID=afRmU 
+        -e LG_ZONE_IDS=afRmU:1 
+        neotys/neoload-web-test-launcher:latest
