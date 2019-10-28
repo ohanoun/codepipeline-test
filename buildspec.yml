@@ -18,10 +18,11 @@ phases:
       - echo Load test the application
       - >
         docker run --rm 
-        -e NEOLOAD_PROJECT_URL=https://github.com/neotysbde/codepipeline-test/blob/master/neoload-project/Archive/smokeTest.zip?raw=true
+        -e NEOLOAD_PROJECT_URL=https://github.com/ohanoun/codepipeline-test/blob/master/neoload-project/Archive/smokeTest.zip?raw=true
+        -e NEOLOADWEB_API_URL=http://dockerps4.neotys.com:8080
         -e SCENARIO_NAME=smoke-test-failed 
-        -e NEOLOADWEB_TOKEN=d509947c287bb0efe472cf9d4a3461ce0af015636c306e7f 
+        -e NEOLOADWEB_TOKEN=0khM5QANVu0rn0BNwRQInGtJ 
         -e TEST_NAME=CI-smoke 
-        -e CONTROLLER_ZONE_ID=afRmU 
-        -e LG_ZONE_IDS=afRmU:1 
+        -e CONTROLLER_ZONE_ID=defaultzone 
+        -e LG_ZONE_IDS=defaultzone:1 
         neotys/neoload-web-test-launcher:latest
